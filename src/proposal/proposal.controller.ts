@@ -33,4 +33,9 @@ export class ProposalController {
         return this.proposalService.getProposalsByTag(tag);
     }
 
+    @Get('contract/:contract')
+    async getProposalByContract(@Param('contract') contract: string) {
+        return this.proposalService.getProposalByContract(contract);
+    }
+
 }

@@ -87,4 +87,16 @@ export class ProposalService {
 
         return proposals;
     }
+
+    async getProposalByContract(contract: string): Promise<ProposalDto[]> {
+        const proposals = await this.prismaService.proposal.findMany({
+            where: { contract: contract },
+        });
+
+        if(proposals.length === 0) {
+            throw new NotFoundException(`Nothing found with the provided parameters!`);
+        }
+
+        return proposals;
+    }
 }
