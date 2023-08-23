@@ -26,7 +26,7 @@ Snapvox API uses Prisma to manage the database schema. To migrate the schema, yo
 
 ```bash
 # development
-npm prisma migrate dev
+npx prisma migrate dev
 ```
 
 ## Running the app
